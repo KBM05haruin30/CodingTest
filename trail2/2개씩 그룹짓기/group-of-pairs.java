@@ -12,13 +12,17 @@ public class Main {
         }
         // Please write your code here.
         Arrays.sort(nums);
-        int[] answNum = new int[2*n];
-        for (int i = 0; i < 2*n; i++)
+        int groupMax = 0;
+        for (int i = 0; i < n; i++)
         {
-            answNum[i] = nums[i] + nums[2*n-i-1];
+            int groupSum = nums[i] + nums[2*n-i-1];
+            if (groupMax < groupSum)
+            {
+                groupMax = groupSum;
+            }
         }
-        Arrays.sort(answNum);
-        System.out.print(answNum[2*n-1]);
 
+        System.out.print(groupMax);
+        
     }
 }
