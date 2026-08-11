@@ -6,8 +6,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String s = sc.next();
         // Please write your code here.
-        char[] sortedString = s.toCharArray();
-        Arrays.sort(sortedString);
+        char[] chars = s.toCharArray();
+        Arrays.sort(chars);
+        String sortedString = new String(chars);
         System.out.print(sortedString);
 
     }
