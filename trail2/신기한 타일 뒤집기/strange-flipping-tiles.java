@@ -12,22 +12,25 @@ public class Main {
 
             if (d == 'L')
             {
-                x = pos - x + 1;
-
-                for (int j = x; j <= pos; j++)
+                while(x-->0)
                 {
-                    arr[j] = -1;
+                    arr[pos] = -1;
+                    if (x > 0)
+                    {
+                        pos--;
+                    }
                 }
-                pos = x;
 
             } else if (d == 'R')
             {
-                x = pos + x - 1;
-                for (int j = pos; j <= x; j++)
+                while(x-->0)
                 {
-                    arr[j] = 1;
+                    arr[pos] = 1;
+                    if (x > 0)
+                    {
+                        pos++;
+                    }
                 }
-                pos = x;
             }
         }
         int white = 0;
