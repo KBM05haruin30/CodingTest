@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+        // 위치 갱신 주의
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] arr = new int[200000];
