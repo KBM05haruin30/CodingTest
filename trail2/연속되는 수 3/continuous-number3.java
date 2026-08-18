@@ -15,7 +15,7 @@ public class Main {
         int ans = 0;
         for (int i = 0; i < N; i++)
         {
-            if (i == 0 || (arr[i] < 0 && arr[i-1] > 0) || (arr[i] > 0 && arr[i-1] < 0))
+            if (i == 0 || arr[i]*arr[i-1] < 0)
             {
                 cnt = 1;
             } else
