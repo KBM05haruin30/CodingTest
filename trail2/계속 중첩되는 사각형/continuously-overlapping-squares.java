@@ -17,20 +17,14 @@ public class Main {
             int x2 = sc.nextInt() + OFFSET;
             int y2 = sc.nextInt() + OFFSET;
 
-            if (i % 2 == 0)
+            for (int x = x1; x < x2; x++)
             {
-                for (int x = x1; x < x2; x++)
+                for (int y = y1; y < y2; y++)
                 {
-                    for (int y = y1; y < y2; y++)
+                    if (i % 2 == 0)
                     {
                         checked[x][y] = 1;
-                    }
-                }
-            } else
-            {
-                for (int x = x1; x < x2; x++)
-                {
-                    for (int y = y1; y < y2; y++)
+                    } else
                     {
                         checked[x][y] = 2;
                     }
