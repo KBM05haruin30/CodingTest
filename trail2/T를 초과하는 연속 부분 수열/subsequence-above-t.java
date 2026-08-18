@@ -14,28 +14,17 @@ public class Main {
 
         int cnt = 0;
         int ans = 0;
-        int cntT = 0;
         for (int i = 0; i < N; i++)
         {
-            if (arr[i] <= T)
-            {
-                cntT++;
-            }
-            if (i == 0 || arr[i-1] <= T || arr[i] <= T)
-            {
-                cnt = 1;
-            } else
+            if (arr[i] > T)
             {
                 cnt++;
+            } else
+            {
+                cnt = 0;
             }
             ans = Math.max(ans, cnt);
         }
-        if (cntT == N)
-        {
-            System.out.print(0);
-        } else
-        {
-            System.out.print(ans);
-        }
+        System.out.print(ans);
     }
 }
