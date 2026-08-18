@@ -25,36 +25,26 @@ public class Main {
             }
         }
 
-        int min_x = Integer.MAX_VALUE;
-        int max_x = Integer.MIN_VALUE;
-        int min_y = Integer.MAX_VALUE;
-        int max_y = Integer.MIN_VALUE;
-        for (int i = 0; i < square.length; i++)
+        int min_x = MAX_R;
+        int max_x = 0;
+        int min_y = MAX_R;
+        int max_y = 0;
+        boolean rectExist = false;
+        for (int i = 0; i <= MAX_R; i++)
         {
-            for (int j = 0; j < square[0].length; j++)
+            for (int j = 0; j <= MAX_R; j++)
             {
                 if (square[i][j] == 1)
                 {
-                    if (min_x > i)
-                    {
-                        min_x = i;
-                    }
-                    if (max_x < i)
-                    {
-                        max_x = i;
-                    }
-                    if (min_y > j)
-                    {
-                        min_y = j;
-                    }
-                    if (max_y < j)
-                    {
-                        max_y = j;
-                    }
+                    rectExist = true;
+                    min_x = Math.min(min_x, i);
+                    max_x = Math.max(max_x, i);
+                    min_y = Math.min(min_y, j);
+                    max_y = Math.max(max_y, j);
                 }
             }
         }
-        if (min_x == Integer.MAX_VALUE && max_x == Integer.MIN_VALUE && min_y == Integer.MAX_VALUE && max_y == Integer.MIN_VALUE)
+        if (!rectExist)
         {
             System.out.print(0);
         } else
