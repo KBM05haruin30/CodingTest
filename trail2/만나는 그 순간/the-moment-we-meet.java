@@ -14,13 +14,11 @@ public class Main {
         int n = sc.nextInt();
         int m = sc.nextInt();
 
-        int total = 0;
         int a_pos = 0;
         int a_idx = 1;
         for (int i = 0; i < n; i++) {
             d[i] = sc.next().charAt(0);
             t[i] = sc.nextInt();
-            total += t[i];
             for (int j = 0; j < t[i]; j++)
             {
                 if (d[i] == 'L')
@@ -51,7 +49,7 @@ public class Main {
         }
 
         int meet = 0;
-        for (int i = 1; i <= total; i++)
+        for (int i = 1; i < a_idx; i++)
         {
             if (a[i] == b[i])
             {
