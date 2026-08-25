@@ -10,10 +10,10 @@ public class Main {
             char c = sc.next().charAt(0);
             if (c == 'G')
             {
-                arr[pos-1] = 1;
+                arr[pos] = 1;
             } else if ( c == 'H')
             {
-                arr[pos-1] = 2;
+                arr[pos] = 2;
             }
         }
         // Please write your code here.
