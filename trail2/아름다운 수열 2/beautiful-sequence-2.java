@@ -1,42 +1,45 @@
 import java.util.Scanner;
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
         int M = sc.nextInt();
-        int[] num = new int[101];
         int[] A = new int[N];
         for (int i = 0; i < N; i++)
             A[i] = sc.nextInt();
         int[] B = new int[M];
         for (int i = 0; i < M; i++)
-        {
             B[i] = sc.nextInt();
-            num[B[i]]++;
-        }
         // Please write your code here.
-        int ans = 0;
-        for (int i = 0; i < N-M+1; i++)
+
+        int[] tmp = new int[M];
+        Arrays.sort(B);
+
+        int cnt = 0;
+        for (int i = 0; i <= N - M; i++)
         {
-            int cnt = 0;
-            int[] num2 = new int[101];
-            for (int j = i; j < M+i; j++)
+            for (int j = 0; j < M; j++)
             {
-                num2[A[j]]++;
+                tmp[j] = A[i+j];
             }
-            for (int j = 1; j < 101; j++)
+            Arrays.sort(tmp);
+
+            boolean isSame =true;
+            for (int j = 0; j < M; j++)
             {
-                if (num[j] == num2[j])
+                if (tmp[j] != B[j])
                 {
-                    cnt++;
+                    isSame = false;
+                    break;
                 }
             }
-            if (cnt == 100)
+            if (isSame)
             {
-                ans++;
+                cnt++;
             }
         }
-        System.out.println(ans);
-        
+        System.out.println(cnt);
     }
 }
