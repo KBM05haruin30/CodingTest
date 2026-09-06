@@ -7,52 +7,51 @@ public class Main {
         int T = sc.nextInt();
         int R = sc.nextInt();
         int C = sc.nextInt();
-        char D = sc.next().charAt(0);
+        String D = sc.next();
         // Please write your code here.
         int[] dx = {0, 1, -1, 0};
         int[] dy = {1, 0, 0, -1};
-        int dirNum = getDir(D);
+        int getDir = directNum(D);
         while(T-- > 0)
         {
-            int nx = R + dx[dirNum];
-            int ny = C + dy[dirNum];
+            int nx = R + dx[getDir];
+            int ny = C + dy[getDir];
             if (!inRange(nx, ny, N))
             {
-                dirNum = 3 - dirNum;
+                getDir = 3 - getDir;
                 continue;
             }
-
-            R = R + dx[dirNum];
-            C = C + dy[dirNum];
+            R = R + dx[getDir];
+            C = C + dy[getDir];
         }
-        System.out.print(R + " " + C);
+
+        System.out.println(R + " " + C);
+
     }
 
-    public static int getDir(char c)
+    public static boolean inRange(int x, int y, int n)
     {
-        if (c == 'R')
+        if (0 < x && x <= n && 0 < y && y <= n)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public static int directNum(String D)
+    {
+        if(D.equals("R"))
         {
             return 0;
-        } else if (c == 'D')
+        } else if (D.equals("D"))
         {
             return 1;
-        } else if (c == 'U')
+        } else if (D.equals("U"))
         {
             return 2;
         } else
         {
             return 3;
-        }
-    }
-
-    public static boolean inRange(int x, int y, int N)
-    {
-        if (0 < x && x <= N && 0 < y && y <= N)
-        {
-            return true;
-        } else
-        {
-            return false;
         }
     }
 }
