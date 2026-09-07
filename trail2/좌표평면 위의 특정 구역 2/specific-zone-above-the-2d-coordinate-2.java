@@ -10,8 +10,8 @@ public class Main {
             y[i] = sc.nextInt();
         }
         // Please write your code here.
+        int ans = Integer.MAX_VALUE;
 
-        int min_val = Integer.MAX_VALUE;
         for (int i = 0; i < N; i++)
         {
             int minX = Integer.MAX_VALUE;
@@ -22,17 +22,18 @@ public class Main {
             for (int j = 0; j < N; j++)
             {
                 if (i == j)
+                {
                     continue;
-
+                }
                 minX = Math.min(minX, x[j]);
                 maxX = Math.max(maxX, x[j]);
                 minY = Math.min(minY, y[j]);
                 maxY = Math.max(maxY, y[j]);
-            }
-            int square = (maxX - minX) * (maxY - minY);
-            min_val = Math.min(square, min_val);
-        }
 
-        System.out.println(min_val);
+            }
+            int size = (maxX - minX) * (maxY - minY);
+            ans = Math.min(size, ans);
+        }
+        System.out.println(ans);
     }
 }
