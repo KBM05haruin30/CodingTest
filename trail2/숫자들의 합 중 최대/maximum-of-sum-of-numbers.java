@@ -5,19 +5,24 @@ public class Main {
         int x = sc.nextInt();
         int y = sc.nextInt();
         // Please write your code here.
+
         int ans = 0;
+
         for (int i = x; i <= y; i++)
         {
-            
-            String s = i + "";
-            int sum = 0;
-            for (int j = 0; j < s.length(); j++)
-            {
-                int k = s.charAt(j) - '0';
-                sum += k;
-            }
-            ans = Math.max(ans, sum);
+            ans = Math.max(ans, digitSum(i));
         }
         System.out.println(ans);
     }
+
+    public static int digitSum(int n)
+    {
+        if (n < 10)
+        {
+            return n;
+        } else
+        {
+            return digitSum(n/10) + (n%10);
+        }
+    } 
 }
