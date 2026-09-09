@@ -10,11 +10,9 @@ public class Main {
         // Please write your code here.
         int ans = 0;
 
-        int min_h = Integer.MAX_VALUE;
         int max_h = Integer.MIN_VALUE;
         for (int i = 0; i < n; i++)
         {
-            min_h = Math.min(min_h, h[i]);
             max_h = Math.max(max_h, h[i]);
         }
 
