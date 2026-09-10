@@ -11,15 +11,15 @@ public class Main {
             b[i] = sc.nextInt();
         }
         // Please write your code here.
-        int ans = 0;
+        int cnt = 0;
         for (int i = 0; i < n; i++)
         {
-            for (int j = i+1; j < n; j++)
+            for (int j = i + 1; j < n; j++)
             {
-                for (int k = j+1; k < n; k++)
+                for (int k = j + 1; k < n; k++)
                 {
                     int[] arr = new int[101];
-                    boolean isFalse = false;
+                    boolean isNotOver = true;
                     for (int x = 0; x < n; x++)
                     {
                         if (x == i || x == j || x == k)
@@ -31,21 +31,22 @@ public class Main {
                             arr[y]++;
                         }
                     }
-
                     for (int x = 0; x < arr.length; x++)
                     {
-                        if (arr[x] >= 2)
+                        if (arr[x] > 1)
                         {
-                            isFalse = true;
+                            isNotOver = false;
+                            break;
                         }
                     }
-                    if (!isFalse)
+
+                    if (isNotOver)
                     {
-                        ans++;
+                        cnt++;
                     }
                 }
             }
         }
-        System.out.println(ans);
+        System.out.println(cnt);
     }
 }
